@@ -33,7 +33,7 @@ namespace Observer
         public string Name { get; set; }
         public int Count { get; set; }
         List<IShopObserver> _obse = new List<IShopObserver>();
-        public Product(string Name, int Count) 
+        public Product(string Name, int Count)
         {
             this.Name = Name;
             this.Count = Count;
@@ -50,10 +50,9 @@ namespace Observer
             Console.WriteLine($"\n////наличие down {Name} : {Count} \n");
             NotificationObs();
         }
-        public void NewObs( IShopObserver data )
-        {
-            _obse.Add( data );
-        }
+        public void NewObs(IShopObserver data) => _obse.Add(data);
+
+        public void DelObs(IShopObserver data) => _obse.Remove(data);
 
         public void NotificationObs()
         {
@@ -68,7 +67,7 @@ namespace Observer
     {
         public void Update(Product tmp)
         {
-            if(tmp.Count > 0)
+            if (tmp.Count > 0)
             {
                 Console.WriteLine($"\nТовар {tmp.Name} появился в наличии \n");
             }
@@ -93,8 +92,8 @@ namespace Observer
 
             Warehouse warehouse = new Warehouse();
             Visitor visitor = new Visitor();
-            gloves.NewObs( visitor );
-            gloves.NewObs( warehouse );
+            gloves.NewObs(visitor);
+            gloves.NewObs(warehouse);
 
             bear.NewObs(visitor);
             bear.NewObs(warehouse);
