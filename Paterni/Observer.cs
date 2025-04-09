@@ -56,10 +56,7 @@ namespace Observer
 
         public void NotificationObs()
         {
-            foreach (var item in _obse)
-            {
-                item.Update(this);
-            }
+            _obse.ForEach(x => x.Update(this));
         }
     }
     //Warehouse
