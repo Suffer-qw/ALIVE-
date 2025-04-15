@@ -16,7 +16,7 @@ namespace Bridge
  * 
  */
 
-
+    НЕМНОГО НЕ ПРАВИЛЬНАЯ РЕАЛТЗАЦИЯ
 
 {
     public class lith
