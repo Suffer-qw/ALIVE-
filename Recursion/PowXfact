@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp6
+{
+
+    public class Recursia
+    {
+        public int fact(int n)
+        {
+            if (n != 1)
+                n = n * this.fact(n-1);
+            return n;
+        }
+        public int Pow(int n, int num)
+        {
+            if (num != 1)
+                n = n * this.Pow(n,num-1);
+            return n;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Recursia rec = new Recursia();
+            int x = rec.fact(8);
+            Console.WriteLine(x);
+            x = rec.Pow(2,5);
+            Console.WriteLine(x);
+        }
+    }
+}
