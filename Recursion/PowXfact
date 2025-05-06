@@ -9,6 +9,19 @@ namespace ConsoleApp6
 
     public class Recursia
     {
+        public int SumMass(List<int> ints)
+        {
+            if (ints.Count <= 0)
+            {
+                return 0;
+            }
+            int i = ints[0];
+            ints.RemoveAt(0);
+            i += SumMass(ints);
+
+
+            return i;
+        }
         public int fact(int n)
         {
             if (n != 1)
@@ -31,6 +44,9 @@ namespace ConsoleApp6
             Console.WriteLine(x);
             x = rec.Pow(2,5);
             Console.WriteLine(x);
+            List<int> ints = new List<int>() { 1,1,1,1,1};
+            int sum = rec.SumMass(ints);
+            Console.WriteLine(sum);
         }
     }
 }
